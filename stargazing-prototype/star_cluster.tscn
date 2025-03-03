@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://detqrcdohb0f4"]
+
+[ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="1_u1o31"]
+[ext_resource type="Texture2D" uid="uid://bhcc4rm4jh8hv" path="res://assets/star_small.png" id="2_86r6b"]
+[ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="3_h87vp"]
+
+[node name="Star Cluster" type="Node3D"]
+
+[node name="Dipper" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741087, -0.0540568, 0.193059)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_u1o31")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10159, 0.211625, -0.686783)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_u1o31")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387215, 0.446255, 0.430426)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_u1o31")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158789, 0.384584, 0.784895)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185944, -0.265756, -0.848193)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_h87vp")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551777, -0.355489, 0.253192)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_h87vp")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Dipper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692975, 0.454406, -0.390592)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_h87vp")
+
+[node name="Other Stars" type="Node3D" parent="."]
+
+[node name="Sprite3D4" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.368557, 0.762718, -0.199389)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.532999, -0.103737, -0.4779)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0791111, -0.163212, 0.601331)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122935, -0.0912157, -0.126596)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265218, -0.670314, -0.506384)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614386, -0.510671, 0.438658)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("3_h87vp")
+
+[node name="Sprite3D10" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17928, -0.745441, 0.30383)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D11" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17444, 0.0402554, -0.32915)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D12" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.686382, 0.165466, 0.551172)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D13" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165057, 0.69135, 0.420932)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D14" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515639, 0.697611, -0.313413)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="Sprite3D15" type="Sprite3D" parent="Other Stars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.787972, 0.206159, 0.101277)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_86r6b")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+visible = false
+radius = 1.0

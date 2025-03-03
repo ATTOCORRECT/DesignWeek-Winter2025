@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg16kc075w7vx"]
+
+[ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
+[ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
+[ext_resource type="Texture2D" uid="uid://dpyqfd6w603gr" path="res://assets/telescope_overlay.png" id="2_xkndl"]
+[ext_resource type="Script" uid="uid://duefh44q85esg" path="res://player_controller.gd" id="3_u44n3"]
+
+[sub_resource type="Environment" id="Environment_xkndl"]
+background_mode = 1
+background_color = Color(0.25098, 0.219608, 0.372549, 1)
+
+[node name="Game" type="Node"]
+script = ExtResource("1_sb48q")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xkndl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Telescope" type="Node3D" parent="World"]
+
+[node name="Camera3D" type="Camera3D" parent="World/Telescope"]
+environment = SubResource("Environment_xkndl")
+projection = 1
+current = true
+fov = 7.0
+size = 2.5
+
+[node name="Star Cluster" parent="World" instance=ExtResource("1_wbfu4")]
+transform = Transform3D(0.853553, -0.146447, 0.5, 0.5, 0.5, -0.707107, -0.146447, 0.853553, 0.5, 0, 0, -16)
+
+[node name="Player Controller" type="Node" parent="."]
+script = ExtResource("3_u44n3")
