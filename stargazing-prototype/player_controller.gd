@@ -11,17 +11,14 @@ var drag_position_offset = Vector2.ZERO
 var drag_roll_position = 0.0
 var drag_roll_position_offset = 0.0
 
-func _ready() -> void:
-	pass
-
-func _process(_delta: float) -> void:
-	pass
-
 func _input(event):
+	
 	# Mouse pressed
 	if event is InputEventMouseButton:
 		# Mouse 1 pressed
-		if event.pressed == true:
+		if event.pressed == true && Singleton.active_state == Singleton.State.DEFAULT:
+			Singleton.active_state = Singleton.State.CONSTELATION_ALIGNMENT
+			
 			var position = telescope_normalized_screen_position(event.position)
 			var centered_position = position * 2 - Vector2.ONE
 			var roll_position = atan2(centered_position.x,centered_position.y)
@@ -37,9 +34,10 @@ func _input(event):
 				drag_roll = false
 		
 		if event.pressed == false:
+			Singleton.active_state = Singleton.State.DEFAULT
 			dragging = false
 	
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && Singleton.active_state == Singleton.State.CONSTELATION_ALIGNMENT:
 		if dragging:
 			if drag_roll:
 				var position = telescope_normalized_screen_position(event.position)
@@ -62,8 +60,6 @@ func _input(event):
 
 					Singleton.star_cluster.rotate(Vector3.UP,drag_position_offset.x * 2)
 					Singleton.star_cluster.rotate(Vector3.RIGHT,drag_position_offset.y * 2)
-
-
 
 func telescope_normalized_screen_position(event_position : Vector2) -> Vector2:
 	var centered_event_position = event_position - Vector2.RIGHT * 0.5 * (SCREEN_SIZE.x - SCREEN_SIZE.y)

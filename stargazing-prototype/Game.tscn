@@ -19,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
 layout_mode = 1
@@ -39,11 +40,12 @@ stretch_mode = 5
 environment = SubResource("Environment_xkndl")
 projection = 1
 current = true
-fov = 7.0
-size = 2.5
+fov = 7.1
+size = 2.0
+near = 10.0
 
 [node name="Star Cluster" parent="World" instance=ExtResource("1_wbfu4")]
-transform = Transform3D(0.853553, -0.146447, 0.5, 0.5, 0.5, -0.707107, -0.146447, 0.853553, 0.5, 0, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
 
 [node name="Player Controller" type="Node" parent="."]
 script = ExtResource("3_u44n3")
