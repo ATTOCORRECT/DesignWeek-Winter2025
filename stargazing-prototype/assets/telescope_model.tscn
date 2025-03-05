@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn8727pnh3qip"]
+
+[ext_resource type="Material" uid="uid://fsxixjpcygn4" path="res://assets/Solid_Dark.tres" id="1_uofhd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ohbfd"]
+material = ExtResource("1_uofhd")
+top_radius = 0.1
+bottom_radius = 0.05
+height = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uofhd"]
+material = ExtResource("1_uofhd")
+top_radius = 0.13
+bottom_radius = 0.12
+height = 0.1
+
+[node name="Telescope Model" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ohbfd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.4)
+mesh = SubResource("CylinderMesh_uofhd")

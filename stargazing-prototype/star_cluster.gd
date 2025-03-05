@@ -6,8 +6,8 @@ var lines: Array
 func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton:
-		if event.pressed == false && Singleton.active_state == Singleton.State.CONSTELATION_TRACING:
-			Singleton.active_state = Singleton.State.DEFAULT
+		if event.pressed == false && Singleton.active_state == Singleton.State.CONSTELLATION_TRACING:
+			Singleton.active_state = Singleton.State.CONSTELLATION_DEFAULT
 
 func reset_selection():
 	for s in stars:
@@ -55,7 +55,7 @@ func line(point1: Vector3, point2: Vector3) -> MeshInstance3D:
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	material.albedo_color = Color.GOLD
 	
-	add_child(mesh_instance)
+	get_child(0).add_child(mesh_instance)
 	
 	var angle = (point2 - point1).angle_to(Vector3.UP)
 	var axis = (point2 - point1).cross(Vector3.UP).normalized()

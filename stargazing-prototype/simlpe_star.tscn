@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bme4wp3lk5xul"]
+
+[ext_resource type="Texture2D" uid="uid://bhcc4rm4jh8hv" path="res://assets/star_small.png" id="1_07jn3"]
+
+[node name="Star" type="Sprite3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_07jn3")
