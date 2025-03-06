@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dg16kc075w7vx"]
+[gd_scene load_steps=19 format=3 uid="uid://dg16kc075w7vx"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
@@ -28,11 +28,21 @@ background_mode = 2
 background_color = Color(0.196078, 0.152941, 0.219608, 1)
 sky = SubResource("Sky_r0x5m")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx171"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhmtn"]
 shading_mode = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_yhmtn"]
-material = SubResource("StandardMaterial3D_yx171")
+material = SubResource("StandardMaterial3D_yhmtn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwjdr"]
+shading_mode = 0
+albedo_color = Color(0.25098, 0.219608, 0.372549, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lvtmh"]
+material = SubResource("StandardMaterial3D_gwjdr")
+top_radius = 0.51
+bottom_radius = 0.51
+height = 0.5
 
 [node name="Game" type="Node"]
 script = ExtResource("1_sb48q")
@@ -556,9 +566,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.60952, 1.19836, -7.25804)
 
 [node name="@Sprite3D@31385" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8551, 6.29236, 5.32656)
-
-[node name="@Sprite3D@31386" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.975222, 3.79752, 6.26131)
 
 [node name="@Sprite3D@31387" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.17502, 2.27897, 4.36371)
@@ -1683,6 +1690,7 @@ texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31742" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.24183, 5.78404, 1.97095)
+modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31743" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1769,9 +1777,16 @@ texture = ExtResource("9_yhmtn")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.389923, 4.95893, -5.45305)
 texture = ExtResource("9_yhmtn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53875, 7.2239, -1.65691)
+[node name="Moon" type="Node3D" parent="World"]
+transform = Transform3D(-0.127887, -0.601806, -0.788337, 0.351749, 0.715672, -0.603396, 0.927317, -0.354463, 0.120159, 1.09981, 4.23846, 7.2479)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Moon"]
 mesh = SubResource("SphereMesh_yhmtn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World/Moon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.25)
+mesh = SubResource("CylinderMesh_lvtmh")
 
 [node name="Player Controller" type="Node" parent="."]
 script = ExtResource("3_u44n3")

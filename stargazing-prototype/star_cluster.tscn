@@ -19,6 +19,7 @@ texture = ExtResource("1_u1o31")
 
 [node name="2" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038641, 0.0885346, -0.20854)
+pixel_size = 0.025
 texture = ExtResource("1_u1o31")
 
 [node name="3" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
