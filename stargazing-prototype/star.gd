@@ -3,21 +3,20 @@ extends Sprite3D
 var select_mode
 var selected = false
 
+@onready var color = self.modulate
+
 @onready var star_cluster = $".".get_parent().get_parent().get_parent()
 
 func _on_area_3d_mouse_entered() -> void:
-	if Singleton.active_state == Singleton.State.GAZING:
+	if Singleton.active_state == Singleton.State.GAZING || Singleton.active_state == Singleton.State.NO_TARGET:
 		return
 	
 	if Singleton.active_state == Singleton.State.CONSTELLATION_TRACING:
 		select()
 		star_cluster.add_to_selection(self)
 
-func _on_area_3d_mouse_exited() -> void:
-	pass
-
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if Singleton.active_state == Singleton.State.GAZING:
+	if Singleton.active_state == Singleton.State.GAZING || Singleton.active_state == Singleton.State.NO_TARGET:
 		return
 	
 	if event is InputEventMouseButton:
@@ -34,11 +33,11 @@ func select():
 
 func deselect():
 	selected = false
-	$".".modulate = Color.WHITE
+	$".".modulate = color
 
 func toggle_selected():
 	selected = !selected
 	if selected:
 		$".".modulate = Color.GOLD
 	else:
-		$".".modulate = Color.WHITE
+		$".".modulate = color

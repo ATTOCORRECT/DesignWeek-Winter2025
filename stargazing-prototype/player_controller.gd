@@ -21,17 +21,18 @@ func _input(event):
 	if Singleton.active_state == Singleton.State.CONSTELLATION_ALIGNMENT || Singleton.active_state == Singleton.State.CONSTELLATION_TRACING || Singleton.active_state == Singleton.State.CONSTELLATION_DEFAULT:
 		constellation_controlls(event)
 	
-	if event.is_action_pressed("ui_up"):
-		Singleton.camera.focus_in()
-	
-	if event.is_action_pressed("ui_down"):
-		Singleton.camera.focus_out()
+	#if event.is_action_pressed("ui_up"):
+		#Singleton.star_cluster.solve()
+	#
+	#if event.is_action_pressed("ui_down"):
+		#Singleton.camera.focus_out()
 	
 	if event.is_action_pressed("zoom_in"):
 		zoom_in()
 	
-	if Singleton.active_state == Singleton.State.NO_TARGET:
+	if Singleton.active_state != Singleton.State.GAZING:
 		if event.is_action_pressed("zoom_out") && !is_zoom_animating:
+			dragging = false
 			is_zoomed = false
 			Singleton.camera.zoom_out()
 			$"../World/Telescope/Telescope Model".visible = true
@@ -42,7 +43,8 @@ func _input(event):
 func zoom_in():
 	if is_zoomed:
 		return
-
+	
+	dragging = false
 	is_zoomed = true
 	Singleton.camera.zoom_in()
 	$"../World/Telescope/Telescope Model".visible = false
@@ -52,6 +54,9 @@ func zoom_in():
 	
 	if Singleton.telescope.rotation_degrees.x < 5:
 		Singleton.telescope.rotation_degrees.x = 5
+	
+	if Singleton.star_cluster == null:
+		return
 	
 	var telescope_direction = rotation_to_direction(Singleton.telescope.rotation)
 	var stars_direction = rotation_to_direction(Singleton.star_cluster.rotation)

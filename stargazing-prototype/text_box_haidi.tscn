@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjlnvnj5t403"]
+
+[ext_resource type="Script" uid="uid://q1ogrxcey64r" path="res://text_box_haidi.gd" id="1_mwxyh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7kl2"]
+bg_color = Color(0.866667, 0.588235, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="textBox_Haidi" type="CanvasLayer"]
+script = ExtResource("1_mwxyh")
+
+[node name="textBox_Haidi_Container" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -165.0
+offset_right = -652.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="textBox_Haidi_Container"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r7kl2")
+
+[node name="MarginContainer" type="MarginContainer" parent="textBox_Haidi_Container/Panel"]
+layout_mode = 0
+offset_right = 457.0
+offset_bottom = 132.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="textBox_Haidi_Container/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="textBox_Haidi_Container/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="startTextEdge" type="Label" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "- "
+
+[node name="text" type="Label" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "text test for the sake of running the test"
+autowrap_mode = 1
+
+[node name="endTextEdge" type="Label" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "-"

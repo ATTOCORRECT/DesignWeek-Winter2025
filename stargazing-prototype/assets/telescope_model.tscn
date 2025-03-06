@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn8727pnh3qip"]
+[gd_scene load_steps=6 format=3 uid="uid://bn8727pnh3qip"]
 
 [ext_resource type="Material" uid="uid://fsxixjpcygn4" path="res://assets/Solid_Dark.tres" id="1_uofhd"]
 
@@ -14,6 +14,16 @@ top_radius = 0.13
 bottom_radius = 0.12
 height = 0.1
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_dppbv"]
+material = ExtResource("1_uofhd")
+top_radius = 0.013
+bottom_radius = 0.025
+height = 0.2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uofhd"]
+material = ExtResource("1_uofhd")
+size = Vector2(0.1, 0.1)
+
 [node name="Telescope Model" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -23,3 +33,13 @@ mesh = SubResource("CylinderMesh_ohbfd")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.4)
 mesh = SubResource("CylinderMesh_uofhd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.696364, -0.122788, 0.707107, 0.696364, -0.122788, -0.707107, 0.173648, 0.984808, -3.09086e-08, 0.110421, 0.0863358, -0.230312)
+mesh = SubResource("CylinderMesh_dppbv")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.863418, -0.488777, -0.124928, 0.434254, 0.846103, -0.309085, 0.256776, 0.212619, 0.942793, 0.0751664, 0.0554642, -0.222794)
+mesh = SubResource("PlaneMesh_uofhd")
+skeleton = NodePath("../MeshInstance3D2")

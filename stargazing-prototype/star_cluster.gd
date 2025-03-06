@@ -1,13 +1,72 @@
 extends Node3D
 
+var most_recent_star: Node3D
 var stars: Array[Node3D] = []
 var lines: Array
+
+@export var answer: Array[Node3D]
+@export var answer2: Array[Array]
+
+@onready var rev_answer = answer.duplicate()
+
+var is_solved = false
+
+func _ready() -> void:
+	stars.clear()
+	rev_answer.reverse()
+
+func _physics_process(_delta: float) -> void:
+	if is_solved == false: 
+		
+		print("Rot ",is_rotation_solved()," | Sta ",stars == answer || stars == rev_answer)
+		print()
+		
+		if is_rotation_solved() && (stars == answer || stars == rev_answer):
+			solve()
+
+func is_rotation_solved() -> bool:
+	var rotator_forward: Vector3 = get_child(0).transform.basis.z
+	var rotator_right: Vector3 = get_child(0).transform.basis.x
+	
+	var tolarance = 20
+	if rotator_forward.angle_to(Vector3.BACK) < deg_to_rad(tolarance) && rotator_right.angle_to(Vector3.RIGHT) < deg_to_rad(tolarance):
+		return true
+	return false
 
 func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton:
 		if event.pressed == false && Singleton.active_state == Singleton.State.CONSTELLATION_TRACING:
 			Singleton.active_state = Singleton.State.CONSTELLATION_DEFAULT
+
+func solve():
+	if is_solved:
+		return
+	
+	print("solved")
+	Singleton.active_state = Singleton.State.NO_TARGET
+	get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
+	Singleton.star_cluster = null
+	Singleton.next_constellation()
+	is_solved = true
+	
+	var initial_rotation = Quaternion(get_child(0).transform.basis)
+	var final_rotation = Quaternion.IDENTITY
+	
+	var seconds = 0.3
+	var total_i = seconds * 60
+	for i in total_i:
+		
+		var t = i / float(total_i)
+		var te = ease(t,1)
+		
+		var new_rotation = initial_rotation.slerp(final_rotation, te)
+		
+		get_child(0).transform.basis = Basis(new_rotation)
+		
+		await get_tree().create_timer(1.0/60.0).timeout
+	
+	Singleton.camera.focus_out()
 
 func reset_selection():
 	for s in stars:
@@ -19,9 +78,13 @@ func reset_selection():
 func start_selection(star: Node3D):
 	reset_selection()
 	stars.append(star)
+	most_recent_star = star
 
 func add_to_selection(star: Node3D):
+	if most_recent_star == star:
+		return
 	stars.append(star)
+	most_recent_star = star
 	update_line()
 
 func update_line():
