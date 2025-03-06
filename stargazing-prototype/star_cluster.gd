@@ -14,6 +14,9 @@ func _ready() -> void:
 	rev_answer.reverse()
 	slow_process()
 	
+	print("answer ",answer)
+	print("reversed ",rev_answer)
+	
 func slow_process():
 	while is_solved == false:
 		
