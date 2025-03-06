@@ -1,17 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://dg16kc075w7vx"]
+[gd_scene load_steps=20 format=3 uid="uid://dg16kc075w7vx"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dpyqfd6w603gr" path="res://assets/telescope_overlay.png" id="2_xkndl"]
 [ext_resource type="Script" uid="uid://bbl6ala82qygf" path="res://camera_3d.gd" id="3_t88pq"]
 [ext_resource type="Script" uid="uid://duefh44q85esg" path="res://player_controller.gd" id="3_u44n3"]
-[ext_resource type="PackedScene" uid="uid://bjlnvnj5t403" path="res://text_box_haidi.tscn" id="3_yx171"]
+[ext_resource type="PackedScene" uid="uid://c6wq8jhuy4hsw" path="res://text_box_haidi.tscn" id="3_yx171"]
 [ext_resource type="PackedScene" uid="uid://bn8727pnh3qip" path="res://assets/telescope_model.tscn" id="4_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://bme4wp3lk5xul" path="res://simlpe_star.tscn" id="6_joorw"]
-[ext_resource type="PackedScene" uid="uid://bg7a2n2lo5lgf" path="res://star_cluster_jelly.tscn" id="6_yx171"]
+[ext_resource type="PackedScene" path="res://star_cluster_jelly.tscn" id="6_yx171"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="9_yhmtn"]
-[ext_resource type="Script" uid="uid://bhpbwwencev7g" path="res://dialogue_manager/DialogueManager.gd" id="10_yx171"]
+[ext_resource type="Script" uid="uid://dieeywu2aw74c" path="res://audio_manager.gd" id="12_gwjdr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
 sky_top_color = Color(0.25098, 0.219608, 0.372549, 1)
@@ -70,6 +70,9 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="textBox_Haidi" parent="UI" instance=ExtResource("3_yx171")]
+
+[node name="text" parent="UI/textBox_Haidi/textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer" index="1"]
+dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
 
 [node name="World" type="Node3D" parent="."]
 
@@ -1792,17 +1795,11 @@ mesh = SubResource("CylinderMesh_lvtmh")
 [node name="Player Controller" type="Node" parent="."]
 script = ExtResource("3_u44n3")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.0677083
-anchor_top = 0.856481
-anchor_right = 0.946181
-anchor_bottom = 0.891975
-size_flags_horizontal = 4
-text = "test"
-script = ExtResource("10_yx171")
-dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "kole10", "heidi12", "kole11", "heidi13", "kole12", "heidi14", "kole13", "heidi15", "kole14", "heidi16", "kole15", "heidi17", "kole16", "heidi18", "kole17", "heidi19", "kole18", "heidi20", "kole19", "heidi21", "kole20", "heidi22", "kole21", "heidi23", "kole22", "heidi24", "kole23", "heidi25", "kole24", "heidi26", "kole25", "heidi27", "heidi28", "kole26", "heidi29", "kole 27"])
-metadata/_edit_use_anchors_ = true
+[node name="Audio Manager" type="Node" parent="."]
+script = ExtResource("12_gwjdr")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Manager"]
+
+[editable path="UI/textBox_Haidi"]
 [editable path="World/Star Clusters/Star Cluster"]
 [editable path="World/Star Clusters/Star Cluster Jelly"]

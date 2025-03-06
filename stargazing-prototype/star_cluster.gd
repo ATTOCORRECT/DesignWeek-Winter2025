@@ -18,8 +18,8 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_solved == false: 
 		
-		print("Rot ",is_rotation_solved()," | Sta ",stars == answer || stars == rev_answer)
-		print()
+		#print("Rot ",is_rotation_solved()," | Sta ",stars == answer || stars == rev_answer)
+		#print()
 		
 		if is_rotation_solved() && (stars == answer || stars == rev_answer):
 			solve()
@@ -44,6 +44,7 @@ func solve():
 		return
 	
 	print("solved")
+	
 	Singleton.active_state = Singleton.State.NO_TARGET
 	get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
 	Singleton.star_cluster = null
