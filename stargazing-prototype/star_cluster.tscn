@@ -14,63 +14,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 [node name="Dipper" type="Node3D" parent="Rotator"]
 
 [node name="Star" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741087, -0.0540568, 0.364546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.417512, -0.367359, 0.205614)
 texture = ExtResource("1_u1o31")
 
 [node name="Star2" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10159, 0.211625, -0.489727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038641, 0.0885346, -0.20854)
 texture = ExtResource("1_u1o31")
 
 [node name="Star3" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387215, 0.446255, 0.170308)
-texture = ExtResource("1_u1o31")
-
-[node name="Star4" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187003, 0.0742291, -0.0942418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00546193, -0.0547915, -0.0928097)
 texture = ExtResource("3_h87vp")
 
-[node name="Star5" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185944, -0.265756, -0.323893)
+[node name="Star4" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424194, -0.226233, -0.0942416)
 texture = ExtResource("3_h87vp")
 
 [node name="Star6" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551777, -0.355489, 0.0720394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479871, 0.350725, 0.0720394)
 texture = ExtResource("3_h87vp")
 
 [node name="Star7" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692975, 0.454406, -0.0803086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35656, 0.336276, -0.0803084)
 texture = ExtResource("3_h87vp")
 
 [node name="Other Stars" type="Node3D" parent="Rotator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00296235, 0, 0)
 
 [node name="Star" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.368557, 0.762718, -0.199389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348181, 0.599711, -0.394998)
 
 [node name="Star2" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.532999, -0.103737, -0.701304)
 
 [node name="Star3" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0791111, -0.163212, 0.753436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.610991, -0.00738737, 0.57653)
 
 [node name="Star4" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122935, -0.0912157, -0.126596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179987, 0.369279, -0.489287)
 
 [node name="Star5" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265218, -0.670314, -0.506384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338571, -0.568435, -0.494158)
 
 [node name="Star6" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614386, -0.510671, 0.438658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642912, -0.416942, 0.385681)
 texture = ExtResource("3_h87vp")
 
 [node name="Star7" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17928, -0.745441, 0.30383)
 
 [node name="Star8" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287296, 0.378825, -0.614347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230243, 0.50108, -0.614347)
 
 [node name="Star9" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.686382, 0.165466, 0.551172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.604879, 0.210293, 0.583773)
 
 [node name="Star10" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165057, 0.69135, 0.420932)
@@ -82,7 +78,11 @@ texture = ExtResource("3_h87vp")
 [node name="Star12" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.787972, 0.206159, 0.101277)
 
+[node name="Star13" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0982056, -0.485815, -0.323893)
+texture = ExtResource("3_h87vp")
+
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 visible = false
 radius = 1.0
