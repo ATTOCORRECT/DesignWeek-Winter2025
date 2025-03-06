@@ -74,7 +74,6 @@ func zoom_in():
 func zoom_out():
 	set_zoom_out_settings()
 	print("zoom out")
-	Singleton.audio_manager.play_layer()
 
 
 func set_focus_in_settings():

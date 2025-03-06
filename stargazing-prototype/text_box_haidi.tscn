@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6wq8jhuy4hsw"]
+[gd_scene load_steps=3 format=3 uid="uid://bjlnvnj5t403"]
 
-[ext_resource type="Script" uid="uid://bhpbwwencev7g" path="res://dialogue_manager/DialogueManager.gd" id="2_wu82e"]
+[ext_resource type="Script" uid="uid://q1ogrxcey64r" path="res://text_box_haidi.gd" id="1_mwxyh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7kl2"]
 bg_color = Color(0.866667, 0.588235, 0.368627, 1)
@@ -11,6 +11,7 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [node name="textBox_Haidi" type="CanvasLayer"]
+script = ExtResource("1_mwxyh")
 
 [node name="textBox_Haidi_Container" type="MarginContainer" parent="."]
 anchors_preset = 12
@@ -47,13 +48,11 @@ layout_mode = 2
 layout_mode = 2
 text = "- "
 
-[node name="text" type="RichTextLabel" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
+[node name="text" type="Label" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "text test for the sake of running the test"
-autowrap_mode = 2
-script = ExtResource("2_wu82e")
-dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "kole10", "heidi12", "kole11", "heidi13", "kole12", "heidi14", "kole13", "heidi15", "kole14", "heidi16", "kole15", "heidi17", "kole16", "heidi18", "kole17", "heidi19", "kole18", "heidi20", "kole19", "heidi21", "kole20", "heidi22", "kole21", "heidi23", "kole22", "heidi24", "kole23", "heidi25", "kole24", "heidi26", "kole25", "heidi27", "heidi28", "kole26", "heidi29", "kole 27"])
+autowrap_mode = 1
 
 [node name="endTextEdge" type="Label" parent="textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2

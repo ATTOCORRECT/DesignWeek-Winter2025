@@ -9,9 +9,6 @@ var star_clusters: Array[Node]
 var index = 0
 var player_controller: Node
 var telescope: Node3D
-var audio_manager: Node
-
-var dialogue: Control
 
 func _physics_process(delta: float) -> void:
 	#print(active_state)
@@ -32,5 +29,3 @@ func next_constellation():
 	else:
 		star_cluster = null
 		print("done")
-	
-	dialogue.next_dialogue(index)

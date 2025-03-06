@@ -42,10 +42,6 @@ zoom_out={
 ]
 }
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://dialogue_manager/heidi_dialogue.en.translation", "res://dialogue_manager/kole_dialogue.en.translation")
-
 [rendering]
 
 renderer/rendering_method="mobile"
