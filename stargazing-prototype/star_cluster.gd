@@ -47,6 +47,7 @@ func solve():
 		return
 	
 	print("solved")
+	
 	Singleton.active_state = Singleton.State.NO_TARGET
 	get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
 	Singleton.star_cluster = null
