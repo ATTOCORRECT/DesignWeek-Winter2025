@@ -7,7 +7,7 @@ func _enter_tree() -> void:
 	Singleton.dialogue = self
 
 func _ready() -> void:
-	read_lines(0, 14)
+	read_lines(0, 15)
 
 #func _ready():
 	#add_child(timer)
@@ -27,15 +27,15 @@ func _ready() -> void:
 func next_dialogue(i):
 	match i:
 		1:
-			read_lines(15, 19)
+			read_lines(16, 19)
 		2:
 			read_lines(20, 27)
 		3:
-			read_lines(28, 26)
+			read_lines(28, 32)
 		4:
-			read_lines(27, 19)
+			read_lines(33, 38)
 		5:
-			read_lines(15, 19)
+			read_lines(39, 55)
 
 
 func read_lines(start: int, end: int):
@@ -45,7 +45,7 @@ func read_lines(start: int, end: int):
 		#print(line_index)
 		print(i + start)
 		text = dialogueLines[i + start]
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(5).timeout
 		
 	print("done")
 
