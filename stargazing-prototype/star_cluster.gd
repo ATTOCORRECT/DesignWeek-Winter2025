@@ -18,11 +18,14 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_solved == false: 
 		
-		#print("Rot ",is_rotation_solved()," | Sta ",stars == answer || stars == rev_answer)
-		#print()
+		print("Rot ",is_rotation_solved()," | Sta ",is_sequence_solved())
+		print()
 		
-		if is_rotation_solved() && (stars == answer || stars == rev_answer):
+		if is_rotation_solved() && is_sequence_solved():
 			solve()
+
+func is_sequence_solved() -> bool:
+	return (stars == answer || stars == rev_answer)
 
 func is_rotation_solved() -> bool:
 	var rotator_forward: Vector3 = get_child(0).transform.basis.z
