@@ -17,13 +17,20 @@ var text_queue = []
 func _ready():
 	print("Starting in READY State")
 	hide_textbox()
-	queue_text("first text test")
-	queue_text("second text test")
+	queue_text("Heidi: “Hey stop running around, I finished setting it up”")
+	queue_text("Kole: “Finally! That took you forever!”")
+	queue_text("Heidi: “Oh calm down. It was only 10 minutes. Come look through it”")
+	queue_text("Kole: “Wow! I can see the stars up close!”")
+	queue_text("Heidi: “Try looking around”")
+	queue_text("Kole: “This is so cool! It’s like millions and millions of Christmas lights!”")
+	queue_text("Heidi: “In the first page of Grandpa’s book he wrote about a red star, do you see it?”")
+	
+	
 
 func _process(delta):
 	match current_state:
 		State.READY:
-			if!text_queue.empty():
+			if!(text_queue.size() == 0):
 				display_text()
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
