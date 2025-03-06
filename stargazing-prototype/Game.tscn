@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bme4wp3lk5xul" path="res://simlpe_star.tscn" id="6_joorw"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="9_yhmtn"]
-[ext_resource type="Script" uid="uid://bhpbwwencev7g" path="res://DialogueManager.gd" id="10_yx171"]
+[ext_resource type="Script" uid="uid://bhpbwwencev7g" path="res://dialogue_manager/DialogueManager.gd" id="10_yx171"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
 sky_top_color = Color(0.25098, 0.219608, 0.372549, 1)
@@ -1806,18 +1806,15 @@ mesh = SubResource("SphereMesh_yhmtn")
 script = ExtResource("3_u44n3")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -148.0
-offset_right = 20.0
-offset_bottom = -125.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = -1
+anchor_left = 0.0677083
+anchor_top = 0.856481
+anchor_right = 0.946181
+anchor_bottom = 0.891975
+size_flags_horizontal = 4
+text = "test"
 script = ExtResource("10_yx171")
 dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "kole10", "heidi12", "kole11", "heidi13", "kole12", "heidi14", "kole13", "heidi15", "kole14", "heidi16", "kole15", "heidi17", "kole16", "heidi18", "kole17", "heidi19", "kole18", "heidi20", "kole19", "heidi21", "kole20", "heidi22", "kole21", "heidi23", "kole22", "heidi24", "kole23", "heidi25", "kole24", "heidi26", "kole25", "heidi27", "heidi28", "kole26", "heidi29", "kole 27"])
+metadata/_edit_use_anchors_ = true
 
 [editable path="World/Star Clusters/Star Cluster"]

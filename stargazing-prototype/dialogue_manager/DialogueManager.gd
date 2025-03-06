@@ -8,7 +8,7 @@ var timer := Timer.new()
 func _ready():
 	add_child(timer)
 	timer.autostart = false
-	timer.wait_time = 0.2
+	timer.wait_time = 1
 	timer.timeout.connect(func(): on_timer_timeout())
 	timer.start()
 
