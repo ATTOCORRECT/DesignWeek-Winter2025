@@ -23,7 +23,7 @@ func _ready():
 	queue_text("Kole: “Wow! I can see the stars up close!”")
 	queue_text("Heidi: “Try looking around”")
 	queue_text("Kole: “This is so cool! It’s like millions and millions of Christmas lights!”")
-	queue_text("Heidi: “In the first page of Grandpa’s book he wrote about the moon, do you see it?”")
+	queue_text("Heidi: “In the first page of Grandpa’s book he wrote something about the moon, do you see it?”")
 	
 	
 
