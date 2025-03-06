@@ -5,35 +5,35 @@
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="1_u1o31"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="3_h87vp"]
 
-[node name="Star Cluster" type="Node3D"]
+[node name="Star Cluster Fish" type="Node3D"]
 script = ExtResource("1_h87vp")
 
 [node name="Rotator" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="Dipper" type="Node3D" parent="Rotator"]
+[node name="Constellation" type="Node3D" parent="Rotator"]
 
-[node name="Star" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="1" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.417512, -0.367359, 0.205614)
 texture = ExtResource("1_u1o31")
 
-[node name="Star2" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="2" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038641, 0.0885346, -0.20854)
 texture = ExtResource("1_u1o31")
 
-[node name="Star3" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="3" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00546193, -0.0547915, -0.0928097)
 texture = ExtResource("3_h87vp")
 
-[node name="Star4" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="4" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424194, -0.226233, -0.0942416)
 texture = ExtResource("3_h87vp")
 
-[node name="Star6" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="5" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479871, 0.350725, 0.0720394)
 texture = ExtResource("3_h87vp")
 
-[node name="Star7" parent="Rotator/Dipper" instance=ExtResource("1_86r6b")]
+[node name="6" parent="Rotator/Constellation" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35656, 0.336276, -0.0803084)
 texture = ExtResource("3_h87vp")
 

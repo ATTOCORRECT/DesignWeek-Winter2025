@@ -4,10 +4,11 @@ var stars: Array[Node3D] = []
 var lines: Array
 
 @export var answer: Array[Node3D]
+@export var answer2: Array[Array]
+
 @onready var rev_answer = answer.duplicate()
 
 var is_solved = false
-
 
 func _ready() -> void:
 	rev_answer.reverse()
@@ -25,7 +26,7 @@ func is_rotation_solved() -> bool:
 	var rotator_forward: Vector3 = get_child(0).transform.basis.z
 	var rotator_right: Vector3 = get_child(0).transform.basis.x
 
-	var tolarance = 10
+	var tolarance = 20
 	if rotator_forward.angle_to(Vector3.BACK) < deg_to_rad(tolarance) && rotator_right.angle_to(Vector3.RIGHT) < deg_to_rad(tolarance):
 		return true
 	return false
@@ -44,6 +45,7 @@ func solve():
 	Singleton.active_state = Singleton.State.NO_TARGET
 	get_child(0).process_mode = Node.PROCESS_MODE_DISABLED
 	Singleton.star_cluster = null
+	Singleton.next_constellation()
 	is_solved = true
 	
 	var initial_rotation = Quaternion(get_child(0).transform.basis)

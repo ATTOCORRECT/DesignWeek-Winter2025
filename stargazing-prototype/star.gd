@@ -3,6 +3,8 @@ extends Sprite3D
 var select_mode
 var selected = false
 
+@onready var color = self.modulate
+
 @onready var star_cluster = $".".get_parent().get_parent().get_parent()
 
 func _on_area_3d_mouse_entered() -> void:
@@ -31,11 +33,11 @@ func select():
 
 func deselect():
 	selected = false
-	$".".modulate = Color.WHITE
+	$".".modulate = color
 
 func toggle_selected():
 	selected = !selected
 	if selected:
 		$".".modulate = Color.GOLD
 	else:
-		$".".modulate = Color.WHITE
+		$".".modulate = color
