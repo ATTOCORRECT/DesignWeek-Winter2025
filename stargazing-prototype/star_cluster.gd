@@ -11,24 +11,19 @@ var lines: Array
 var is_solved = false
 
 func _ready() -> void:
+	stars.clear()
 	rev_answer.reverse()
-	slow_process()
-	
-	print("answer ",answer)
-	print("reversed ",rev_answer)
-	
-func slow_process():
-	while is_solved == false:
+
+func _physics_process(_delta: float) -> void:
+	if is_solved == false:
 		
 		if is_rotation_solved() && (stars == answer || stars == rev_answer):
 			solve()
-		
-		await get_tree().create_timer(1.0/10.0).timeout
 
 func is_rotation_solved() -> bool:
 	var rotator_forward: Vector3 = get_child(0).transform.basis.z
 	var rotator_right: Vector3 = get_child(0).transform.basis.x
-
+	
 	var tolarance = 20
 	if rotator_forward.angle_to(Vector3.BACK) < deg_to_rad(tolarance) && rotator_right.angle_to(Vector3.RIGHT) < deg_to_rad(tolarance):
 		return true

@@ -23,7 +23,6 @@ texture = ExtResource("4_tn4ip")
 
 [node name="3" parent="Rotator/Constellation" instance=ExtResource("2_wh5vp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0300891, 0.641418, -0.111615)
-modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("3_af57d")
 
 [node name="4" parent="Rotator/Constellation" instance=ExtResource("2_wh5vp")]
@@ -44,6 +43,7 @@ texture = ExtResource("3_af57d")
 
 [node name="8" parent="Rotator/Constellation" instance=ExtResource("2_wh5vp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147265, -0.512487, 0.191978)
+modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("4_tn4ip")
 
 [node name="Other Stars" type="Node3D" parent="Rotator"]

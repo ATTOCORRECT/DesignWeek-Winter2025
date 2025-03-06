@@ -1320,6 +1320,7 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31646" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.72139, 5.77242, 1.26499)
+modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31647" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1328,6 +1329,7 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31648" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.74938, 6.90646, -3.89482)
+modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31649" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1504,6 +1506,7 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31695" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15625, 2.69561, 5.39869)
+modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31696" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
