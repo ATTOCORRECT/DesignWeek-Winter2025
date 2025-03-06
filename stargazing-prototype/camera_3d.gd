@@ -69,12 +69,13 @@ func focus_out():
 func zoom_in():
 	set_zoom_in_settings()
 	print("zoom in")
+	Singleton.audio_manager.play_Telescope()
 
 
 func zoom_out():
 	set_zoom_out_settings()
 	print("zoom out")
-	Singleton.audio_manager.play_layer()
+	Singleton.audio_manager.play_Telescope()
 
 
 func set_focus_in_settings():

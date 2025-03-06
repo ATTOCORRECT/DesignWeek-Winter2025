@@ -47,6 +47,7 @@ func solve():
 		return
 	
 	print("solved")
+	Singleton.audio_manager.play_twinkle()
 	
 	Singleton.active_state = Singleton.State.NO_TARGET
 	get_child(0).process_mode = Node.PROCESS_MODE_DISABLED

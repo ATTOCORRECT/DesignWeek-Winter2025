@@ -36,7 +36,7 @@ func next_dialogue(i):
 			read_lines(33, 38)
 		5:
 			read_lines(39, 55)
-
+	Singleton.audio_manager.play_layer(i)
 
 func read_lines(start: int, end: int):
 	
@@ -45,7 +45,7 @@ func read_lines(start: int, end: int):
 		#print(line_index)
 		print(i + start)
 		text = dialogueLines[i + start]
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(0.5).timeout
 		
 	print("done")
 

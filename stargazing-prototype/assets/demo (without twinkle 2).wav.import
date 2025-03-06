@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1jtli7qmf8iy"
+path="res://.godot/imported/demo (without twinkle 2).wav-6fef1393f99b3b49f38ac8dda2c6b829.sample"
+
+[deps]
+
+source_file="res://assets/demo (without twinkle 2).wav"
+dest_files=["res://.godot/imported/demo (without twinkle 2).wav-6fef1393f99b3b49f38ac8dda2c6b829.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

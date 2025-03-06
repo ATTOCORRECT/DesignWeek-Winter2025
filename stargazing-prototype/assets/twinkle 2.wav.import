@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bopdl3btjnmty"
+path="res://.godot/imported/twinkle 2.wav-1a4c02296b3975382e312b419d08cbcb.sample"
+
+[deps]
+
+source_file="res://assets/twinkle 2.wav"
+dest_files=["res://.godot/imported/twinkle 2.wav-1a4c02296b3975382e312b419d08cbcb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
