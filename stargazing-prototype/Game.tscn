@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dg16kc075w7vx"]
+[gd_scene load_steps=16 format=3 uid="uid://dg16kc075w7vx"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dpyqfd6w603gr" path="res://assets/telescope_overlay.png" id="2_xkndl"]
 [ext_resource type="Script" uid="uid://bbl6ala82qygf" path="res://camera_3d.gd" id="3_t88pq"]
 [ext_resource type="Script" uid="uid://duefh44q85esg" path="res://player_controller.gd" id="3_u44n3"]
+[ext_resource type="PackedScene" uid="uid://bjlnvnj5t403" path="res://text_box_haidi.tscn" id="3_yx171"]
 [ext_resource type="PackedScene" uid="uid://bn8727pnh3qip" path="res://assets/telescope_model.tscn" id="4_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://bme4wp3lk5xul" path="res://simlpe_star.tscn" id="6_joorw"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
@@ -55,6 +56,8 @@ grow_vertical = 2
 texture = ExtResource("2_xkndl")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="textBox_Haidi" parent="UI" instance=ExtResource("3_yx171")]
 
 [node name="World" type="Node3D" parent="."]
 
