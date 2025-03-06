@@ -1,5 +1,6 @@
 extends Node3D
 
+var most_recent_star: Node3D
 var stars: Array[Node3D] = []
 var lines: Array
 
@@ -15,7 +16,10 @@ func _ready() -> void:
 	rev_answer.reverse()
 
 func _physics_process(_delta: float) -> void:
-	if is_solved == false:
+	if is_solved == false: 
+		
+		print("Rot ",is_rotation_solved()," | Sta ",stars == answer || stars == rev_answer)
+		print()
 		
 		if is_rotation_solved() && (stars == answer || stars == rev_answer):
 			solve()
@@ -74,9 +78,13 @@ func reset_selection():
 func start_selection(star: Node3D):
 	reset_selection()
 	stars.append(star)
+	most_recent_star = star
 
 func add_to_selection(star: Node3D):
+	if most_recent_star == star:
+		return
 	stars.append(star)
+	most_recent_star = star
 	update_line()
 
 func update_line():

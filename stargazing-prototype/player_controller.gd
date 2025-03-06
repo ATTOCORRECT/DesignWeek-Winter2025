@@ -30,7 +30,7 @@ func _input(event):
 	if event.is_action_pressed("zoom_in"):
 		zoom_in()
 	
-	if Singleton.active_state == Singleton.State.NO_TARGET:
+	if Singleton.active_state != Singleton.State.GAZING:
 		if event.is_action_pressed("zoom_out") && !is_zoom_animating:
 			dragging = false
 			is_zoomed = false

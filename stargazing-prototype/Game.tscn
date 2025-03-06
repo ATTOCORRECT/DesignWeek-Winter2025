@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpyqfd6w603gr" path="res://assets/telescope_overlay.png" id="2_xkndl"]
 [ext_resource type="Script" uid="uid://bbl6ala82qygf" path="res://camera_3d.gd" id="3_t88pq"]
 [ext_resource type="Script" uid="uid://duefh44q85esg" path="res://player_controller.gd" id="3_u44n3"]
-[ext_resource type="PackedScene" path="res://text_box_haidi.tscn" id="3_yx171"]
+[ext_resource type="PackedScene" uid="uid://bjlnvnj5t403" path="res://text_box_haidi.tscn" id="3_yx171"]
 [ext_resource type="PackedScene" uid="uid://bn8727pnh3qip" path="res://assets/telescope_model.tscn" id="4_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://bme4wp3lk5xul" path="res://simlpe_star.tscn" id="6_joorw"]
 [ext_resource type="PackedScene" uid="uid://bg7a2n2lo5lgf" path="res://star_cluster_jelly.tscn" id="6_yx171"]
@@ -93,7 +93,7 @@ answer = [NodePath("Rotator/Constellation/6"), NodePath("Rotator/Constellation/2
 answer2 = Array[Array]([[6, 2], [2, 5], [5, 1]])
 
 [node name="Rotator" parent="World/Star Clusters/Star Cluster" index="0"]
-transform = Transform3D(0.853553, -0.146447, 0.5, 0.5, 0.5, -0.707107, -0.146447, 0.853553, 0.5, 0, 0, -4)
+transform = Transform3D(-0.337623, -0.913645, 0.226414, -0.141994, 0.287221, 0.947281, -0.930509, 0.287675, -0.226705, 0, 0, -4)
 
 [node name="Star Cluster Jelly" parent="World/Star Clusters" node_paths=PackedStringArray("answer") instance=ExtResource("6_yx171")]
 transform = Transform3D(1.99386, -0.0733882, -0.138384, -1.36723e-22, 1.76691, -0.937032, 0.15664, 0.934153, 1.76148, 0, 0, 0)
