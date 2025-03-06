@@ -73,8 +73,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.204931, -0.0699622)
 
 [node name="Star Clusters" type="Node3D" parent="World"]
 
-[node name="Star Cluster" parent="World/Star Clusters" instance=ExtResource("1_wbfu4")]
+[node name="Star Cluster" parent="World/Star Clusters" node_paths=PackedStringArray("answer") instance=ExtResource("1_wbfu4")]
 transform = Transform3D(1, 1.22474, 1.22474, 0, 1.41421, -1.41421, -1.73205, 0.707107, 0.707107, 0, 0, 0)
+answer = [NodePath("Rotator/Dipper/Star7"), NodePath("Rotator/Dipper/Star2"), NodePath("Rotator/Dipper/Star6"), NodePath("Rotator/Dipper/Star"), NodePath("Rotator/Dipper/Star3"), NodePath("Rotator/Dipper/Star4")]
 
 [node name="Rotator" parent="World/Star Clusters/Star Cluster" index="0"]
 transform = Transform3D(0.853553, -0.146447, 0.5, 0.5, 0.5, -0.707107, -0.146447, 0.853553, 0.5, 0, 0, -4)
