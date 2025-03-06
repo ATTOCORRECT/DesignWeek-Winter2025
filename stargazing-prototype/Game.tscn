@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c6wq8jhuy4hsw" path="res://text_box_haidi.tscn" id="3_yx171"]
 [ext_resource type="PackedScene" uid="uid://bn8727pnh3qip" path="res://assets/telescope_model.tscn" id="4_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://bme4wp3lk5xul" path="res://simlpe_star.tscn" id="6_joorw"]
-[ext_resource type="PackedScene" path="res://star_cluster_jelly.tscn" id="6_yx171"]
+[ext_resource type="PackedScene" uid="uid://bg7a2n2lo5lgf" path="res://star_cluster_jelly.tscn" id="6_yx171"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="9_yhmtn"]
-[ext_resource type="Script" uid="uid://dieeywu2aw74c" path="res://audio_manager.gd" id="12_gwjdr"]
+[ext_resource type="Script" path="res://audio_manager.gd" id="12_gwjdr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
 sky_top_color = Color(0.25098, 0.219608, 0.372549, 1)
