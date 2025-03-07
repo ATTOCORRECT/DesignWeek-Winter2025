@@ -61,7 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165057, 0.69135, 0.420932
 
 [node name="Star11" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515639, 0.693581, -0.313413)
-texture = ExtResource("3_h87vp")
 
 [node name="Star12" parent="Rotator/Other Stars" instance=ExtResource("1_86r6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.787972, 0.206159, 0.101277)

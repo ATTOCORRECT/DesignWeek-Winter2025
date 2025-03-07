@@ -69,8 +69,8 @@ func zoom_in():
 func focus():
 	is_zoom_animating = true
 	
-	var telescope_rotation = Singleton.telescope.rotation
-	var stars_rotation = Singleton.star_cluster.rotation
+	var telescope_rotation = Quaternion(Singleton.telescope.transform.basis.orthonormalized())
+	var stars_rotation = Quaternion(Singleton.star_cluster.transform.basis.orthonormalized())
 	
 	var seconds = 0.3
 	var total_i = seconds * 60
@@ -79,7 +79,8 @@ func focus():
 		var t = i / float(total_i)
 		var te = ease(t,-5)
 		
-		Singleton.telescope.rotation = lerp(telescope_rotation, stars_rotation, te)
+		var new_rotation = telescope_rotation.slerp(stars_rotation, te)
+		Singleton.telescope.basis = Basis(new_rotation)
 		
 		await get_tree().create_timer(1.0/60.0).timeout
 	
@@ -112,7 +113,7 @@ func gazing_controlls(event):
 				drag_position = position
 
 				Singleton.telescope.rotate_y(drag_position_offset.x * -0.8)
-				Singleton.telescope.rotate_object_local(Vector3.LEFT,drag_position_offset.y * 0.8)
+				Singleton.telescope.rotation.x = clamp(drag_position_offset.y * -0.8 + Singleton.telescope.rotation.x, deg_to_rad(-10), deg_to_rad(89))
 
 func constellation_controlls(event):
 		# Mouse pressed

@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://1cucq5p32ejh"]
+
+[ext_resource type="Script" uid="uid://d4l1733n0hx3u" path="res://star_cluster.gd" id="1_qmobx"]
+[ext_resource type="PackedScene" uid="uid://c6h15vi3l4y8a" path="res://star.tscn" id="2_kye2x"]
+[ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="3_2w077"]
+[ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="4_yelkf"]
+
+[node name="Star Cluster Whale" type="Node3D"]
+script = ExtResource("1_qmobx")
+
+[node name="Rotator" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Constellation" type="Node3D" parent="Rotator"]
+
+[node name="1" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.903949, 0.0877361, -0.0121694)
+texture = ExtResource("3_2w077")
+
+[node name="2" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68483, 0.1619, -0.3194)
+texture = ExtResource("3_2w077")
+
+[node name="3" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.587069, -0.00665402, 0.0033865)
+texture = ExtResource("3_2w077")
+
+[node name="4" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135345, 0.151787, 0.388397)
+texture = ExtResource("4_yelkf")
+
+[node name="5" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299524, 0.128189, 0.380619)
+texture = ExtResource("3_2w077")
+
+[node name="6" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441109, 0.28663, 0.205614)
+texture = ExtResource("3_2w077")
+
+[node name="7" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(0.999766, 0.012217, 0.0178524, -0.0122151, 0.999925, -0.00021812, -0.0178538, 0, 0.999841, 0.650835, 0.317933, -0.430767)
+texture = ExtResource("3_2w077")
+
+[node name="8" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(0.999766, 0.012217, 0.0178524, -0.0122151, 0.999925, -0.00021812, -0.0178538, 0, 0.999841, 0.807838, 0.201389, -0.211923)
+texture = ExtResource("3_2w077")
+
+[node name="9" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75462, -0.006654, 0.0306094)
+texture = ExtResource("3_2w077")
+
+[node name="10" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.835525, -0.131384, 0.108389)
+texture = ExtResource("4_yelkf")
+
+[node name="11" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.714166, -0.353875, 0.287283)
+texture = ExtResource("4_yelkf")
+
+[node name="12" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279298, -0.471862, -0.284399)
+texture = ExtResource("4_yelkf")
+
+[node name="13" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.151197, -0.353875, -0.0588374)
+texture = ExtResource("4_yelkf")
+
+[node name="14" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000501573, -0.360617, 0.1045)
+texture = ExtResource("4_yelkf")
+
+[node name="15" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138715, -0.222403, -0.00828075)
+texture = ExtResource("4_yelkf")
+
+[node name="16" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483682, -0.245439, -0.20273)
+texture = ExtResource("3_2w077")
+
+[node name="17" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.617408, -0.128013, 0.205614)
+texture = ExtResource("3_2w077")
+
+[node name="18" parent="Rotator/Constellation" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.755622, -0.235887, 0.205614)
+texture = ExtResource("3_2w077")
+
+[node name="Other Stars" type="Node3D" parent="Rotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00296235, 0, 0)
+
+[node name="Star" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348181, 0.599711, 0.584215)
+
+[node name="Star2" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.582333, 0.487726, 0.49983)
+
+[node name="Star3" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0576055, 0.450449, -0.840195)
+
+[node name="Star4" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148628, 0.743463, 0.571884)
+
+[node name="Star5" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3353, 0.556791, -0.0231318)
+
+[node name="Star6" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362523, -0.703243, 0.462838)
+
+[node name="Star7" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104156, -0.808246, -0.435365)
+
+[node name="Star8" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286939, -0.501015, -0.645371)
+
+[node name="Star9" parent="Rotator/Other Stars" instance=ExtResource("2_kye2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547501, -0.609907, 0.220444)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+visible = false
+radius = 1.0
