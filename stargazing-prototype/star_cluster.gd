@@ -18,8 +18,8 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_solved == false: 
 		
-		print("Rot ",is_rotation_solved()," | Sta ",is_sequence_solved())
-		print()
+		#print("Rot ",is_rotation_solved()," | Sta ",is_sequence_solved())
+		#print()
 		
 		if is_rotation_solved() && is_sequence_solved():
 			solve()

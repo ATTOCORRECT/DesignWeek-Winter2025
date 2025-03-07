@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dg16kc075w7vx"]
+[gd_scene load_steps=23 format=3 uid="uid://dg16kc075w7vx"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" path="res://star_cluster_seahorse.tscn" id="8_gwjdr"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="9_yhmtn"]
+[ext_resource type="PackedScene" uid="uid://baxums3wiafaa" path="res://star_cluster_octo.tscn" id="9_yyih5"]
+[ext_resource type="PackedScene" uid="uid://1cucq5p32ejh" path="res://star_cluster_whale.tscn" id="10_qjyg3"]
 [ext_resource type="Script" uid="uid://dieeywu2aw74c" path="res://audio_manager.gd" id="12_gwjdr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
@@ -71,6 +73,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="textBox_Haidi" parent="UI" instance=ExtResource("3_yx171")]
+visible = false
 
 [node name="text" parent="UI/textBox_Haidi/textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer" index="1"]
 dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
@@ -114,6 +117,20 @@ answer = [NodePath("Rotator/Constellation/1"), NodePath("Rotator/Constellation/2
 [node name="Rotator" parent="World/Star Clusters/Star Cluster Seahorse" index="0"]
 transform = Transform3D(-0.607449, -0.771357, 0.189775, 0.0424928, 0.207009, 0.977416, -0.793221, 0.601794, -0.0929701, 0, 0, -4)
 
+[node name="Star Cluster Octo" parent="World/Star Clusters" node_paths=PackedStringArray("answer") instance=ExtResource("9_yyih5")]
+transform = Transform3D(-1.00218, -1.19889, -1.24832, 1.49012e-08, 1.44248, -1.38537, 1.73079, -0.694192, -0.72281, 0, 0, 0)
+answer = [NodePath("Rotator/Constellation/1"), NodePath("Rotator/Constellation/2"), NodePath("Rotator/Constellation/3"), NodePath("Rotator/Constellation/4"), NodePath("Rotator/Constellation/5"), NodePath("Rotator/Constellation/6"), NodePath("Rotator/Constellation/7"), NodePath("Rotator/Constellation/8"), NodePath("Rotator/Constellation/9"), NodePath("Rotator/Constellation/10"), NodePath("Rotator/Constellation/11")]
+
+[node name="Rotator" parent="World/Star Clusters/Star Cluster Octo" index="0"]
+transform = Transform3D(-0.766952, -0.568469, -0.297703, 0.634427, -0.602048, -0.48481, 0.096368, -0.560696, 0.822394, 0, 0, -4)
+
+[node name="Star Cluster Whale" parent="World/Star Clusters" node_paths=PackedStringArray("answer") instance=ExtResource("10_qjyg3")]
+transform = Transform3D(-1.80817, 0.7461, 0.416981, 0, 0.975719, -1.74584, -0.854716, -1.57839, -0.882131, 0, 0, 0)
+answer = [NodePath("Rotator/Constellation/1"), NodePath("Rotator/Constellation/2"), NodePath("Rotator/Constellation/3"), NodePath("Rotator/Constellation/4"), NodePath("Rotator/Constellation/5"), NodePath("Rotator/Constellation/6"), NodePath("Rotator/Constellation/7"), NodePath("Rotator/Constellation/8"), NodePath("Rotator/Constellation/9"), NodePath("Rotator/Constellation/10"), NodePath("Rotator/Constellation/11"), NodePath("Rotator/Constellation/12"), NodePath("Rotator/Constellation/13"), NodePath("Rotator/Constellation/14"), NodePath("Rotator/Constellation/15"), NodePath("Rotator/Constellation/16"), NodePath("Rotator/Constellation/17"), NodePath("Rotator/Constellation/18")]
+
+[node name="Rotator" parent="World/Star Clusters/Star Cluster Whale" index="0"]
+transform = Transform3D(0.0482953, -0.998708, 0.0158111, 0.14952, 0.0228798, 0.988494, -0.987579, -0.0453755, 0.150432, 0, 0, -4)
+
 [node name="Sky Stars" type="Node3D" parent="World"]
 
 [node name="Star" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -127,9 +144,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.497311, 7.8757, 0.177496)
 
 [node name="@Sprite3D@31218" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.63208, 5.88368, -1.47148)
-
-[node name="@Sprite3D@31219" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.26648, 5.35808, 4.78897)
 
 [node name="@Sprite3D@31220" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.89326, 0.837379, -1.19346)
@@ -179,9 +193,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.38383, 4.31307, -5.12613)
 [node name="@Sprite3D@31238" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.61059, 3.42689, 7.69502)
 
-[node name="@Sprite3D@31239" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.34148, 6.00665, 1.74812)
-
 [node name="@Sprite3D@31240" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.70507, 4.14279, 4.34079)
 
@@ -193,9 +204,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.27787, 1.73073, 0.194475)
 
 [node name="@Sprite3D@31243" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.57595, 3.12222, 3.2022)
-
-[node name="@Sprite3D@31244" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.917582, 5.87019, 4.29277)
 
 [node name="@Sprite3D@31245" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.65157, 1.66332, 5.93703)
@@ -229,9 +237,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.69342, 1.61027, 4.55488)
 
 [node name="@Sprite3D@31256" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.51672, 6.31582, -5.81777)
-
-[node name="@Sprite3D@31258" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.716972, 7.18248, 1.91375)
 
 [node name="@Sprite3D@31259" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.02313, 0.227521, -5.83162)
@@ -269,17 +274,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.08694, 2.14876, -2.78879)
 [node name="@Sprite3D@31271" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.94298, 1.72625, -1.76144)
 
-[node name="@Sprite3D@31272" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.83654, 6.34875, 3.9479)
-
 [node name="@Sprite3D@31273" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.85662, 4.29705, -4.85882)
 
 [node name="@Sprite3D@31274" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.947038, 6.84201, 4.30312)
-
-[node name="@Sprite3D@31275" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.56638, 6.03517, 1.38039)
 
 [node name="@Sprite3D@31276" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.46243, 4.19787, -4.84454)
@@ -287,20 +286,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.46243, 4.19787, -4.84454)
 [node name="@Sprite3D@31277" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.73385, 0.868326, 5.60492)
 
-[node name="@Sprite3D@31279" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.85818, 6.34846, 2.89244)
-
 [node name="@Sprite3D@31280" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.14202, 4.86875, 5.61376)
 
 [node name="@Sprite3D@31281" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.20351, 3.74776, 4.82799)
-
-[node name="@Sprite3D@31282" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.97504, 6.40376, 2.96989)
-
-[node name="@Sprite3D@31284" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.85448, 6.22799, 3.01835)
 
 [node name="@Sprite3D@31285" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.07884, 2.282, -6.14596)
@@ -308,14 +298,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.07884, 2.282, -6.14596)
 [node name="@Sprite3D@31286" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.31826, 3.97076, -4.91448)
 
-[node name="@Sprite3D@31287" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.419, 5.67638, 4.39028)
-
 [node name="@Sprite3D@31288" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.58819, 5.61859, 5.04725)
-
-[node name="@Sprite3D@31289" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.502212, 5.66239, 4.56598)
 
 [node name="@Sprite3D@31290" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.44249, 3.01135, -1.14314)
@@ -325,9 +309,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.3051, 3.79328, -6.58286)
 
 [node name="@Sprite3D@31294" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.93298, 3.53104, 4.87288)
-
-[node name="@Sprite3D@31295" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.30674, 3.95515, 2.6609)
 
 [node name="@Sprite3D@31296" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.50982, 3.55879, 3.45241)
@@ -362,9 +343,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.07799, 7.11233, 0.674731)
 [node name="@Sprite3D@31308" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.85427, 5.59622, -4.66806)
 
-[node name="@Sprite3D@31309" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.36372, 6.77266, 2.86832)
-
 [node name="@Sprite3D@31310" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.83801, 6.00151, -4.01799)
 modulate = Color(1, 1, 0.713726, 1)
@@ -388,9 +366,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.76616, 6.98373, 0.202724)
 [node name="@Sprite3D@31318" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.8768, 3.43549, -2.66877)
 
-[node name="Mars" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
+[node name="notMars" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.13265, 3.54783, -5.46187)
-modulate = Color(0.945699, 0.589928, 0.41031, 1)
 
 [node name="@Sprite3D@31320" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.09424, 2.75094, 7.41688)
@@ -435,23 +412,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.02694, 8.15082, 0.521072)
 [node name="@Sprite3D@31334" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.47769, 0.805214, 1.33327)
 
-[node name="@Sprite3D@31335" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.89698, 5.80731, 2.93608)
-
 [node name="@Sprite3D@31336" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.24612, 2.84041, 1.62714)
 
 [node name="@Sprite3D@31337" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.19444, 1.44803, -6.96027)
 
-[node name="@Sprite3D@31338" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.68935, 4.93692, 4.43229)
-
 [node name="@Sprite3D@31339" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.12525, 1.24689, -5.1018)
-
-[node name="@Sprite3D@31341" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.01966, 8.23868, 2.49152)
 
 [node name="@Sprite3D@31343" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.57203, 3.11772, -0.19631)
@@ -459,14 +427,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.57203, 3.11772, -0.19631)
 [node name="@Sprite3D@31344" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.17413, 3.68129, 5.36387)
 
-[node name="@Sprite3D@31345" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.1743, 5.07466, 3.04011)
-
 [node name="@Sprite3D@31347" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.4999, 2.29366, 5.84844)
-
-[node name="@Sprite3D@31348" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.78326, 4.4982, 5.16382)
 
 [node name="@Sprite3D@31349" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.472291, 5.59286, -5.55501)
@@ -474,9 +436,6 @@ modulate = Color(1, 1, 0.713726, 1)
 
 [node name="@Sprite3D@31350" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.17493, 6.07622, -0.674631)
-
-[node name="@Sprite3D@31351" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.04662, 5.03495, 1.43719)
 
 [node name="@Sprite3D@31352" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.37209, 6.46822, -0.236604)
@@ -565,9 +524,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.20796, 0.472574, 6.12635)
 [node name="@Sprite3D@31384" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.60952, 1.19836, -7.25804)
 
-[node name="@Sprite3D@31385" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8551, 6.29236, 5.32656)
-
 [node name="@Sprite3D@31387" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.17502, 2.27897, 4.36371)
 
@@ -606,9 +562,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.02533, 7.84092, 0.0176308)
 
 [node name="@Sprite3D@31399" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.62018, 4.61737, 3.73421)
-
-[node name="@Sprite3D@31401" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.7243, 6.13275, 3.57219)
 
 [node name="@Sprite3D@31402" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.42206, 4.57926, -2.44288)
@@ -677,9 +630,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.02597, 1.0591, 7.16734)
 [node name="@Sprite3D@31424" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.72719, 2.99517, -7.14929)
 
-[node name="@Sprite3D@31425" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.15553, 4.64193, 2.11195)
-
 [node name="@Sprite3D@31426" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.32389, 5.34926, -6.45344)
 
@@ -719,14 +669,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.17173, 3.27685, 2.74348)
 [node name="@Sprite3D@31438" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.96049, 1.66072, -2.24265)
 
-[node name="@Sprite3D@31439" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.85372, 6.83927, 1.70235)
-
 [node name="@Sprite3D@31440" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.95735, 6.34234, -4.00702)
-
-[node name="@Sprite3D@31441" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.35362, 5.01367, 4.70286)
 
 [node name="@Sprite3D@31442" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.06091, 6.55835, -3.23577)
@@ -836,13 +780,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.02541, 3.24337, 5.97399)
 [node name="@Sprite3D@31481" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.17395, 2.49011, -3.07262)
 
-[node name="@Sprite3D@31483" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.20095, 5.90404, 3.16652)
-modulate = Color(0.32549, 0.796078, 1, 1)
-
-[node name="@Sprite3D@31484" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.7404, 6.04207, 2.51207)
-
 [node name="@Sprite3D@31485" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.836482, 5.47756, 6.01613)
 
@@ -876,9 +813,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.34691, 5.10556, -5.29081)
 [node name="@Sprite3D@31496" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.93617, 1.13945, -4.10419)
 
-[node name="@Sprite3D@31497" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.73176, 3.57986, 4.05711)
-
 [node name="@Sprite3D@31498" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.63227, 6.41889, -3.00024)
 
@@ -902,12 +836,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.6445, 4.50372, -4.16533)
 
 [node name="@Sprite3D@31507" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.05234, 0.574617, -1.60688)
-
-[node name="@Sprite3D@31508" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.23469, 5.20506, 2.18747)
-
-[node name="@Sprite3D@31509" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.444176, 6.78258, 3.09957)
 
 [node name="@Sprite3D@31510" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.29902, 0.453514, -1.79555)
@@ -948,9 +876,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.68589, 1.14351, -0.471606)
 [node name="@Sprite3D@31522" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.67583, 3.91171, -3.70397)
 
-[node name="@Sprite3D@31523" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.48612, 6.54208, 3.65989)
-
 [node name="@Sprite3D@31524" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.81629, 3.63772, -6.11231)
 
@@ -968,9 +893,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.50273, 1.55903, -5.73681)
 
 [node name="@Sprite3D@31529" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.61576, 1.40075, 2.15664)
-
-[node name="@Sprite3D@31530" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.6231, 4.18134, 3.2171)
 
 [node name="@Sprite3D@31531" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.4825, 1.52765, 1.05619)
@@ -999,9 +921,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.36013, 3.97058, 5.38812)
 [node name="@Sprite3D@31539" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.57087, 2.48266, 5.35273)
 
-[node name="@Sprite3D@31540" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.35628, 5.93067, 3.677)
-
 [node name="@Sprite3D@31541" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.50507, 1.83162, -1.47609)
 
@@ -1020,9 +939,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.45416, 1.92309, -4.41006)
 [node name="@Sprite3D@31547" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.46245, 1.82485, -5.73202)
 
-[node name="@Sprite3D@31548" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.04209, 8.27624, 2.91215)
-
 [node name="@Sprite3D@31549" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.11066, 4.48823, -2.8285)
 
@@ -1031,9 +947,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.53185, 3.88063, 7.11398)
 
 [node name="@Sprite3D@31551" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.98534, 4.35105, 6.79179)
-
-[node name="@Sprite3D@31552" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.65814, 6.61872, 5.05503)
 
 [node name="@Sprite3D@31553" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.59013, 3.38207, -2.02018)
@@ -1051,9 +964,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.72424, 1.66833, 3.26499)
 [node name="@Sprite3D@31557" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.98493, 3.03578, -6.44074)
 
-[node name="@Sprite3D@31558" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.00548, 5.44081, 3.0097)
-
 [node name="@Sprite3D@31559" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.31517, 4.55066, -4.68805)
 
@@ -1065,9 +975,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.20296, 2.22992, 5.89877)
 
 [node name="@Sprite3D@31562" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.9488, 5.24216, -4.45925)
-
-[node name="@Sprite3D@31563" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.09843, 7.1092, 2.37727)
 
 [node name="@Sprite3D@31564" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.7361, 2.34725, 8.0587)
@@ -1099,14 +1006,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.37601, 1.58306, 4.87084)
 [node name="@Sprite3D@31573" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.83229, 0.776547, 0.591804)
 
-[node name="@Sprite3D@31574" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.77145, 5.19578, 2.09318)
-
 [node name="@Sprite3D@31575" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.46854, 0.178016, 3.92362)
-
-[node name="@Sprite3D@31576" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.35315, 5.99249, 2.06995)
 
 [node name="@Sprite3D@31578" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.89407, 1.81892, 5.9112)
@@ -1147,9 +1048,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.676442, 7.55709, -2.51786)
 [node name="@Sprite3D@31590" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.84481, 6.6219, 0.695907)
 
-[node name="@Sprite3D@31592" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.26345, 5.74305, 1.74976)
-
 [node name="@Sprite3D@31594" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.01349, 3.36907, 5.72408)
 
@@ -1162,9 +1060,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15975, 0.237809, -4.705)
 [node name="@Sprite3D@31597" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.18405, 1.43373, 2.12124)
 
-[node name="@Sprite3D@31598" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.907305, 5.76379, 5.51269)
-
 [node name="@Sprite3D@31599" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.87417, 6.55651, -2.1154)
 
@@ -1176,9 +1071,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.86371, 5.04781, -4.47701)
 
 [node name="@Sprite3D@31602" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.22155, 4.91592, -1.0545)
-
-[node name="@Sprite3D@31604" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.37315, 6.43747, 3.3011)
 
 [node name="@Sprite3D@31605" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.64274, 6.64522, -3.34009)
@@ -1208,14 +1100,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.67962, 4.87053, 6.18818)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.92181, 2.9652, -4.36529)
 texture = ExtResource("8_yx171")
 
-[node name="@Sprite3D@31616" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.61071, 5.92022, 2.83348)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31617" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.78456, 4.03443, 3.15472)
-texture = ExtResource("8_yx171")
-
 [node name="@Sprite3D@31618" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.84585, 6.64883, -5.22348)
 texture = ExtResource("8_yx171")
@@ -1235,10 +1119,6 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31622" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.35876, 5.58265, 6.77557)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31623" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.190768, 6.14979, 4.39173)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31624" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1276,6 +1156,7 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31633" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.35195, 5.9806, -3.94347)
+modulate = Color(0.945699, 0.589928, 0.41031, 1)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31634" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1296,10 +1177,6 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31639" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.47413, 4.5394, 4.09981)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31640" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.0816, 5.57626, 3.55148)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31641" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1325,10 +1202,6 @@ texture = ExtResource("8_yx171")
 [node name="@Sprite3D@31646" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.72139, 5.77242, 1.26499)
 modulate = Color(0.804459, 0.554282, 0.975068, 1)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31647" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.13702, 4.68625, 4.69226)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31648" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1383,10 +1256,6 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31661" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.04376, 2.38894, 7.04305)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31662" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.41461, 5.49409, 2.29771)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31663" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1514,11 +1383,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15625, 2.69561, 5.39869)
 modulate = Color(0.804459, 0.554282, 0.975068, 1)
 texture = ExtResource("8_yx171")
 
-[node name="@Sprite3D@31696" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.84769, 6.16666, 2.91569)
-modulate = Color(1, 1, 0.713726, 1)
-texture = ExtResource("8_yx171")
-
 [node name="@Sprite3D@31697" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.88898, 4.69966, -5.70648)
 texture = ExtResource("8_yx171")
@@ -1545,10 +1409,6 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31703" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.36168, 5.48312, 2.21385)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31704" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.2908, 4.13996, 4.63015)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31705" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1578,10 +1438,6 @@ texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31712" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.38137, 5.30449, -2.52952)
-texture = ExtResource("8_yx171")
-
-[node name="@Sprite3D@31713" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.03708, 6.94733, 0.857914)
 texture = ExtResource("8_yx171")
 
 [node name="@Sprite3D@31714" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1685,21 +1541,12 @@ texture = ExtResource("9_yhmtn")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.27772, 7.07599, 0.489298)
 texture = ExtResource("9_yhmtn")
 
-[node name="@Sprite3D@31742" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.24183, 5.78404, 1.97095)
-modulate = Color(0.804459, 0.554282, 0.975068, 1)
-texture = ExtResource("9_yhmtn")
-
 [node name="@Sprite3D@31743" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.12655, 3.92045, 5.67749)
 texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31744" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.78141, 2.26042, 5.87692)
-texture = ExtResource("9_yhmtn")
-
-[node name="@Sprite3D@31745" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.29076, 5.46021, 1.51494)
 texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31747" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1721,10 +1568,6 @@ texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31751" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.09157, 5.99408, -4.74142)
-texture = ExtResource("9_yhmtn")
-
-[node name="@Sprite3D@31752" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.84703, 6.67682, 4.29595)
 texture = ExtResource("9_yhmtn")
 
 [node name="@Sprite3D@31753" parent="World/Sky Stars" instance=ExtResource("6_joorw")]
@@ -1798,3 +1641,5 @@ script = ExtResource("12_gwjdr")
 [editable path="World/Star Clusters/Star Cluster"]
 [editable path="World/Star Clusters/Star Cluster Jelly"]
 [editable path="World/Star Clusters/Star Cluster Seahorse"]
+[editable path="World/Star Clusters/Star Cluster Octo"]
+[editable path="World/Star Clusters/Star Cluster Whale"]
