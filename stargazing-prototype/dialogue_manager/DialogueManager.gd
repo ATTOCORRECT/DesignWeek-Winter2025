@@ -45,8 +45,9 @@ func read_lines(start: int, end: int):
 		#print(line_index)
 		print(i + start)
 		text = dialogueLines[i + start]
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(2.5).timeout
 		
+	text = " "
 	print("done")
 
 	

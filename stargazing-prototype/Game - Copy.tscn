@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bxc5sl82rayl5"]
+[gd_scene load_steps=27 format=3 uid="uid://bxc5sl82rayl5"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
@@ -19,9 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://ma8rrkkrjf5f" path="res://assets/melody high.wav" id="15_bvhbk"]
 [ext_resource type="AudioStream" uid="uid://cydj8aur0i4av" path="res://assets/twinkle.wav" id="16_cpsxm"]
 [ext_resource type="AudioStream" uid="uid://bopdl3btjnmty" path="res://assets/twinkle 2.wav" id="17_hmewc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjyg3"]
-bg_color = Color(0.6, 0.6, 0.6, 0.129412)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
 sky_top_color = Color(0.25098, 0.219608, 0.372549, 1)
@@ -81,13 +78,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="textBox_Haidi" parent="UI" instance=ExtResource("3_yx171")]
-
-[node name="Panel" parent="UI/textBox_Haidi/textBox_Haidi_Container" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_qjyg3")
-
-[node name="text" parent="UI/textBox_Haidi/textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer" index="1"]
-custom_minimum_size = Vector2(0, 50)
-size_flags_vertical = 4
 
 [node name="World" type="Node3D" parent="."]
 

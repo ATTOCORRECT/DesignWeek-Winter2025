@@ -80,10 +80,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="textBox_Haidi" parent="UI" instance=ExtResource("3_yx171")]
-visible = false
-
-[node name="text" parent="UI/textBox_Haidi/textBox_Haidi_Container/Panel/MarginContainer/HBoxContainer" index="1"]
-dialogueLines = Array[String](["heidi1", "kole1", "heidi2", "kole2", "heidi3", "kole3", "heidi4", "kole4", "heidi5", "kole5", "heidi6", "heidi7", "kole6", "heidi8", "kole7", "heidi9", "kole8", "heidi10", "kole9", "heidi11", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
 
 [node name="World" type="Node3D" parent="."]
 
