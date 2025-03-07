@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://1cucq5p32ejh"]
+[gd_scene load_steps=5 format=3 uid="uid://db8t2nrhi5uqe"]
 
 [ext_resource type="Script" uid="uid://d4l1733n0hx3u" path="res://star_cluster.gd" id="1_qmobx"]
 [ext_resource type="PackedScene" uid="uid://c6h15vi3l4y8a" path="res://star.tscn" id="2_kye2x"]

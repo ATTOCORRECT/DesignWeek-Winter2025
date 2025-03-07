@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dg16kc075w7vx"]
+[gd_scene load_steps=30 format=3 uid="uid://dg16kc075w7vx"]
 
 [ext_resource type="Script" uid="uid://be3h2klfl8dg7" path="res://game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://detqrcdohb0f4" path="res://star_cluster.tscn" id="1_wbfu4"]
@@ -12,9 +12,16 @@
 [ext_resource type="PackedScene" path="res://star_cluster_seahorse.tscn" id="8_gwjdr"]
 [ext_resource type="Texture2D" uid="uid://c583xmajg272d" path="res://assets/star_medium.png" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://bu6rokk325ecg" path="res://assets/star_big.png" id="9_yhmtn"]
-[ext_resource type="PackedScene" uid="uid://baxums3wiafaa" path="res://star_cluster_octo.tscn" id="9_yyih5"]
-[ext_resource type="PackedScene" uid="uid://1cucq5p32ejh" path="res://star_cluster_whale.tscn" id="10_qjyg3"]
+[ext_resource type="PackedScene" uid="uid://bb01l86ffyqc4" path="res://star_cluster_octo.tscn" id="9_yyih5"]
+[ext_resource type="PackedScene" uid="uid://db8t2nrhi5uqe" path="res://star_cluster_whale.tscn" id="10_qjyg3"]
 [ext_resource type="Script" uid="uid://dieeywu2aw74c" path="res://audio_manager.gd" id="12_gwjdr"]
+[ext_resource type="AudioStream" uid="uid://bi7jnibpxb10c" path="res://assets/base theme.wav" id="13_elkpi"]
+[ext_resource type="AudioStream" uid="uid://bd3yqs5eq2alc" path="res://assets/Design Week - Team 30 - SFX twinkle.wav" id="13_lvtmh"]
+[ext_resource type="AudioStream" uid="uid://ds05r88cawvbl" path="res://assets/melody.wav" id="14_0yprl"]
+[ext_resource type="AudioStream" uid="uid://0wxpibqmcs48" path="res://assets/Design Week - Team 30 - Telescope.wav" id="14_yyih5"]
+[ext_resource type="AudioStream" uid="uid://ma8rrkkrjf5f" path="res://assets/melody high.wav" id="15_bvhbk"]
+[ext_resource type="AudioStream" uid="uid://cydj8aur0i4av" path="res://assets/twinkle.wav" id="16_cpsxm"]
+[ext_resource type="AudioStream" uid="uid://bopdl3btjnmty" path="res://assets/twinkle 2.wav" id="17_hmewc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t88pq"]
 sky_top_color = Color(0.25098, 0.219608, 0.372549, 1)
@@ -1635,7 +1642,30 @@ script = ExtResource("3_u44n3")
 [node name="Audio Manager" type="Node" parent="."]
 script = ExtResource("12_gwjdr")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Manager"]
+[node name="AudioStreamPlayerBase" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("13_elkpi")
+
+[node name="AudioStreamPlayerMelody" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("14_0yprl")
+volume_db = -80.0
+
+[node name="AudioStreamPlayerMelody2" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("15_bvhbk")
+volume_db = -80.0
+
+[node name="AudioStreamPlayerMusicT" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("16_cpsxm")
+volume_db = -80.0
+
+[node name="AudioStreamPlayerMusicT2" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("17_hmewc")
+volume_db = -80.0
+
+[node name="AudioStreamPlayerTwinkle" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("13_lvtmh")
+
+[node name="AudioStreamPlayerTelescope" type="AudioStreamPlayer" parent="Audio Manager"]
+stream = ExtResource("14_yyih5")
 
 [editable path="UI/textBox_Haidi"]
 [editable path="World/Star Clusters/Star Cluster"]
